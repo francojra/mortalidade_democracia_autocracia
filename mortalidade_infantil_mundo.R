@@ -68,11 +68,20 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
                                "#DDCC77", "#117733",
                                "#332288", "#AA4499")) +
   scale_y_continuous(expand = expansion(mult = c(0,0))) +
-  labs(x = "Países", y = "Número de mortes (milhões)") +
+  labs(x = "Países", y = "Número médio de mortes (milhões)") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
   theme(legend.position = "none",
         axis.text = element_text(color = "black"))
 
-
+ggplot(mi2, aes(x = Year, y = mort_inf,
+                group = Entity, color = Entity)) +
+  geom_line(size = 1.3) +
+  scale_color_manual(values = c("#88CCEE", "#CC6677",
+                               "#DDCC77", "#117733",
+                               "#332288", "#AA4499")) +
+  labs(x = "Tempo (anos)", y = "Número de mortes (milhões)") +
+  theme_ipsum(axis_title_size = 16,
+              axis_text_size = 14) +
+  theme(axis.text = element_text(color = "black"))
 
