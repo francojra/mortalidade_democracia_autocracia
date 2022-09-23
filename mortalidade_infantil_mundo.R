@@ -1,0 +1,26 @@
+
+# Mortalidade infantil --------------------------------------------------------------------------------------------------------------------------
+# Autoria do script: Jeanne Franco --------------------------------------------------------------------------------------------------------------
+# Data: 23/09/22 --------------------------------------------------------------------------------------------------------------------------------
+# Referência: https://ourworldindata.org/child-mortality ----------------------------------------------------------------------------------------
+
+# Sobre os dados ---------------------------------------------------------------------------------------------------------------------------
+
+### Nesse registro, nós estamos dando uma visão geral sobre a mortalidade de
+### bebês e crianças. Na demografia, mortalidade de crianças se refere a mortalidade
+### de crianças com menos de 5 anos de idade, enquanto a morte de bebês se refere
+### a morte de crianças com menos de 1 ano de idade.
+
+### A mortalidade infantil hoje é a mais baixa de todos os tempos. Em menos de 
+### três décadas a mortalidade infantil caiu para metade - De 12,5 milhões em 1990
+### para 5,2 milhões em 2019. Isso é uma grande conquista que não deve ser subestimada.
+
+### Obviamente, a morte de cada criança é uma enorme tragédia, e em muitos países
+### muitas crianças morrem por causas que nós sabemos como prevenir e tratar.
+### Hoje, a maior taxa de mortalidade infantil está na África sub-saariana, onde
+### ainda existem países com taxa de mortalidade infantil maior que 10%. Isso significa
+### que uma criança a cada 10 que nascem morre antes de alcançar os 5 anos de idade.
+
+# Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
+
+library(tidyverse)
