@@ -24,3 +24,37 @@
 # Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
 
 library(tidyverse)
+library(cols4all)
+library(hrbrthemes)
+
+# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+
+mi <- read.csv("child-mortality-igme.csv")
+view(mi)
+names(mi)
+
+# Manipular dados --------------------------------------------------------------------------------------------------------------------------
+
+mi <- mi %>%
+  select(-Code) %>%
+  rename(mort_inf = Mortality.rate..under.5..per.1.000.live.births.) %>%
+  view()
+
+mi1 <- mi %>%
+  filter(Entity %in% c("China", "North Korea", "Cuba",
+                       "United States", "Japan", "Germany")) %>%
+  group_by(Entity) %>%
+  summarise(media = mean(mort_inf),
+            n = n(), sd = sd(mort_inf),
+            se = sd/sqrt(n)) %>%
+  view()
+
+mi2 <- mi %>%
+  filter(Entity %in% c("China", "North Korea", "Cuba",
+                       "United States", "Japan", "Germany"),
+         (between(Year, 1990, 2020))) %>%
+  view()
+
+
+
+
