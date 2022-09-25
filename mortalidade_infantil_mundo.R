@@ -76,11 +76,14 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
 
 ggplot(mi2, aes(x = as.factor(Year), y = mort_inf,
                 group = Entity, color = Entity)) +
-  geom_line(size = 1.3) +
+  geom_point(shape = 15, size = 2.5) +
+  geom_line(size = 1.2) +
   scale_color_manual(values = c("#88CCEE", "#CC6677",
                                "#DDCC77", "#117733",
                                "#332288", "#AA4499")) +
-  labs(x = "Tempo (anos)", y = "Número de mortes (milhões)") +
+  labs(x = "Tempo (anos)", 
+       y = "Número de mortes (milhões)",
+       col = "Países") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
   theme(axis.text = element_text(color = "black"),
