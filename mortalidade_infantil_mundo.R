@@ -74,7 +74,7 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
   theme(legend.position = "none",
         axis.text = element_text(color = "black"))
 
-ggplot(mi2, aes(x = Year, y = mort_inf,
+ggplot(mi2, aes(x = as.factor(Year), y = mort_inf,
                 group = Entity, color = Entity)) +
   geom_line(size = 1.3) +
   scale_color_manual(values = c("#88CCEE", "#CC6677",
@@ -83,5 +83,6 @@ ggplot(mi2, aes(x = Year, y = mort_inf,
   labs(x = "Tempo (anos)", y = "Número de mortes (milhões)") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
-  theme(axis.text = element_text(color = "black"))
+  theme(axis.text = element_text(color = "black"),
+        axis.text.x = element_text(angle = 60))
 
