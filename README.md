@@ -1,4 +1,4 @@
-# Mortalidade infantil em países capitalistas e socialistas
+# Mortalidade infantil em países capitalistas e comunistas
 
 ### Autoria do script: Jeanne Franco
 ### Data: 23/09/22
