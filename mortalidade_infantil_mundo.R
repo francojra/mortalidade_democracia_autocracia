@@ -74,7 +74,7 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
   theme(legend.position = "none",
         axis.text = element_text(color = "black"))
 
-ggplot(mi2, aes(x = as.factor(Year), y = mort_inf,
+ggplot(mi2, aes(x = Year, y = mort_inf,
                 group = Entity, color = Entity)) +
   geom_point(shape = 15, size = 2.5) +
   geom_line(size = 1.2) +
@@ -86,6 +86,5 @@ ggplot(mi2, aes(x = as.factor(Year), y = mort_inf,
        col = "Países") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
-  theme(axis.text = element_text(color = "black"),
-        axis.text.x = element_text(angle = 60))
+  theme(axis.text = element_text(color = "black"))
 
