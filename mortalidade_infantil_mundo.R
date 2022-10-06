@@ -68,6 +68,8 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
                                "#DDCC77", "#117733",
                                "#332288", "#AA4499")) +
   scale_y_continuous(expand = expansion(mult = c(0,0))) +
+  scale_x_discrete(labels = c("Japão", "Alemanha", "Estados Unidos",
+                              "Cuba", "Coreia do Norte", "China")) +
   labs(x = "Países", y = "Número médio de mortes (milhões)") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
@@ -80,7 +82,9 @@ ggplot(mi2, aes(x = Year, y = mort_inf,
   geom_line(size = 1.2) +
   scale_color_manual(values = c("#88CCEE", "#CC6677",
                                "#DDCC77", "#117733",
-                               "#332288", "#AA4499")) +
+                               "#332288", "#AA4499"),
+                     labels = c("China", "Cuba", "Alemanha",
+                                "Japão", "Coreia do Norte", "Estados Unidos")) +
   labs(x = "Tempo (anos)", 
        y = "Número de mortes (milhões)",
        col = "Países") +
