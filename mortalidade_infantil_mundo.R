@@ -26,6 +26,7 @@
 library(tidyverse)
 library(cols4all)
 library(hrbrthemes)
+library(ggthemes)
 
 # Carregar dados ---------------------------------------------------------------------------------------------------------------------------
 
@@ -55,6 +56,10 @@ mi2 <- mi %>%
          (between(Year, 1990, 2020))) %>%
   view()
 
+mi3 <- mi %>%
+  filter(Entity %in% c("China", "United States")) %>%
+  view()
+
 # Gráficos ---------------------------------------------------------------------------------------------------------------------------------
 
 c4a("safe", 6)
@@ -70,7 +75,7 @@ ggplot(mi1, aes(x = fct_reorder(Entity, media),
   scale_y_continuous(expand = expansion(mult = c(0,0))) +
   scale_x_discrete(labels = c("Japão", "Alemanha", "Estados Unidos",
                               "Cuba", "Coreia do Norte", "China")) +
-  labs(x = "Países", y = "Número médio de mortes (milhões)") +
+  labs(x = "Países", y = "Mortalidade infantil (milhões)") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
   theme(legend.position = "none",
@@ -86,9 +91,22 @@ ggplot(mi2, aes(x = Year, y = mort_inf,
                      labels = c("China", "Cuba", "Alemanha",
                                 "Japão", "Coreia do Norte", "Estados Unidos")) +
   labs(x = "Tempo (anos)", 
-       y = "Número de mortes (milhões)",
+       y = "Mortalidade infantil (milhões)",
        col = "Países") +
   theme_ipsum(axis_title_size = 16,
               axis_text_size = 14) +
   theme(axis.text = element_text(color = "black"))
 
+c4a("dark2", 2)
+
+ggplot(mi3, aes(x = Year, y = mort_inf, 
+                  group = Entity, col = Entity)) +
+  geom_line(size = 2.2) +
+  scale_color_manual(values = c("#1B9E77", "#D95F02"),
+                     labels = c("China", "Estados Unidos")) +
+  labs(x = "Tempo (anos)", y = "Mortalidade infantil (milhões)", 
+       color = "Países") +
+  theme_hc() +
+  theme(axis.title = element_text(size = 18),
+        axis.text = element_text(color = "black", size = 15),
+        legend.text = element_text(size = 12))
