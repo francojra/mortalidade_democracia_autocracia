@@ -1,4 +1,4 @@
-# Mortalidade infantil em países capitalistas e comunistas
+# Mortalidade infantil em países democratas e autocratas
 
 ### Autoria do script: Jeanne Franco
 ### Data: 23/09/22
